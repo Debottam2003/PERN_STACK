@@ -16,10 +16,11 @@ app.set("view engine", "ejs");
 
 app.get("/", async (req, res, next) => {
   try{
+  //res.send("this is from the pc");
   let result = await pg_obj.query("SELECT * FROM members");
   res.send(result.rows);
   //res.send("This is another route of the backend");
-  let name = "fullname"
+  //let name = "fullname"
   //res.json([{[name] : "debottam kar", age : 22},{sex : "male", cgpa : 8.348}]);
   }
   catch(err){
@@ -34,6 +35,7 @@ app.post("/", async (req, res, next) => {
   //console.log(result.rows);
   res.send(result.rows);
   //res.send("'Hello from the backend made using postgresql and express by Debottam'");
+  //res.send("hi");
 });
 
 //dynamic routing
