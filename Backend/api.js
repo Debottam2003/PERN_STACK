@@ -1,8 +1,8 @@
 const axios = require('axios');
 const express = require('express');
+require('dotenv').config();
 
 const app = express();
-const port = 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -24,6 +24,6 @@ app.get("/boredom",async (req, res, next)=>{
     console.log(response.data.activity);
 });
 
-app.listen(port, function(){
-    console.log("The server is listenting port " + port);
+app.listen(process.env.PORT, function(){
+    console.log("The server is listenting port " + process.env.PORT);
 });
