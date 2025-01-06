@@ -38,6 +38,10 @@ app.post("/", async (req, res, next) => {
   //res.send("hi");
 });
 
+app.get("/pdf",(req, res)=>{
+  res.sendFile(__dirname + '/rr_note.pdf');
+});
+
 //dynamic routing
 app.get("/members/:name", async (req, res, next) => {
   let name = req.params.name;
