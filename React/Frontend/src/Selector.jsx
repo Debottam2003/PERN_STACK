@@ -6,9 +6,10 @@ function Selector(prop) {
   useEffect(() => {
     let fetchdata = async () => {
     try{
-    let resposne = await axios.post("http://localhost:5000/",{name : "Debottam"});
-    console.log(resposne.data);
-    setBackendData(JSON.stringify(resposne.data));
+    let resposne = await fetch("http://localhost:5000/",{method: "POST"},{name : "Debottam"});
+    console.log(resposne);
+    let data = await resposne.json();
+    setBackendData(JSON.stringify(data));
     //setBackendData(resposne.data[0].name);
     }catch(err){
       console.log(err);
